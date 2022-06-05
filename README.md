@@ -1,4 +1,6 @@
 # TreeAugmentation
+This repository contains all code used throughout the semester project on the Tree Augmentation Problem. It contains function definitions, numerical simulations, and images produced for the report.
+
 ## Necessary Modules
 The following modules are necessary to run the code (the versions specified are the versions used by the author).
 - gurobipy 9.5.1 (for guidance on installation and licensing, I recommend following [this](https://www.youtube.com/watch?v=fRKhao2bzsY%5D) video.)
