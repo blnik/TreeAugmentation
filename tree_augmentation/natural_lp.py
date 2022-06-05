@@ -136,57 +136,6 @@ def solve_naturalLP(tree, links, link_weights = None, variable_type = GRB.BINARY
     }
     naturalLP.write('naturalLP.attr')
     return output
-    
-    
-    
-#def solve_naturalLP(tree, links, link_weights = None, variable_type = GRB.BINARY):
-#    """
-#    Parameters
-#        tree:          tree under consideration
-#        links:         list of links
-#        link_weights:  weights of each link in list links (if None, we assume unit weights for each link)
-#        variable_type: (GRB.BINARY or GRB.CONTINUOUS) specifies whether to solve LP relaxation or integer LP.
-#    Returns
-#        dict with the following keys
-#        lp_status: LP status of the optimised LP (opt for optimal, inf for infeasible, error for everything else)
-#        optimal_solution:  list of optimal values of decision variables (same order as links) 
-#                           (empty list if no optimal solution is found)
-#        optimal_obj_value: objective value corresponding to the optimal solution 
-#                           (None if no optimal solution is found)
-#    """
-#    tree_edges = list(tree.edges())
-#    number_edges = len(tree_edges)
-#    number_links = len(links)
-#    
-#    # construct edge_link_cover_matrix
-#    edge_link_cover_matrix = create_edge_link_cover_matrix(tree, links, tree_edges, number_edges, number_links)
-#
-#    # construct natural LP
-#    naturalLP = gp.Model('naturalLP', env = env)
-#    link_vars = naturalLP.addMVar(shape = number_links, vtype = variable_type, name = 'link_vars', lb = 0, ub = 1)
-#    if link_weights is None:
-#        link_weights = np.ones(number_links)
-#    naturalLP.setObjective(link_weights @ link_vars, GRB.MINIMIZE)
-#    naturalLP.addConstr(edge_link_cover_matrix @ link_vars >= 1, name = 'c')
-#    
-#    # solve LP
-#    naturalLP.optimize()
-#    
-#    # format output
-#    lp_status = decode_lp_status(naturalLP.getAttr('Status'))
-#    if lp_status == 'opt':
-#        optimal_solution = naturalLP.getAttr('X')
-#        optimal_obj_value = naturalLP.objVal
-#    else:
-#        optimal_solution = []
-#        optimal_obj_value = None
-#    output = {
-#        'lp_status': lp_status, 
-#        'optimal_solution': optimal_solution, 
-#        'optimal_obj_value': optimal_obj_value
-#    }
-#    naturalLP.write('naturalLP.attr')
-#    return output
 
 
 
