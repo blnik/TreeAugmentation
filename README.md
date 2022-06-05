@@ -1,7 +1,7 @@
 # TreeAugmentation
 ## Necessary Modules
 The following modules are necessary to run the code (the versions specified are the versions used by the author).
-- gurobipy 9.5.1 (for an installation and guidance on licensing, I recommend following [this](https://www.youtube.com/watch?v=fRKhao2bzsY%5D) video.)
+- gurobipy 9.5.1 (for guidance on installation and licensing, I recommend following [this](https://www.youtube.com/watch?v=fRKhao2bzsY%5D) video.)
 - matplotlib 3.4.2
 - networkx 2.6.2
 - numpy 1.21.0
