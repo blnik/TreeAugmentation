@@ -32,4 +32,4 @@ Here we simulate a lot of instances and let the different approximation algorith
 ### The rest of the files
 - Whenever we simulate a lot of instances, we save their results as NumPy arrays in the `saved_outputs` folder.
 - All images that are produced to be included in the report are stored in the `report_images` folder.
-- The `draw_example_graphs` folder contains an array of notebooks that draw TAP instances which are used in the report
+- The `draw_example_graphs` folder contains an array of notebooks that draw TAP instances which are used in the report and the presentation. Files that start with a 1 are used to create images for the report and files that start with a 2 are used to create images for the presentation
