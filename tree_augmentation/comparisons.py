@@ -274,7 +274,7 @@ def plot_joint_hist(n, factor, axis, to_include = ALL_ALGORITHMS[2:]):
         
         
         
-def plot_average_approx_ratios(ns, factor, axis, to_include = ALL_ALGORITHMS[2:], linestyles = None):
+def plot_average_approx_ratios(ns, factor, axis, to_include = ALL_ALGORITHMS[2:], linestyles = None, linewidths = None):
     """
     Parameters:
         ns:         list of integers defining the number of nodes to consider
@@ -294,6 +294,8 @@ def plot_average_approx_ratios(ns, factor, axis, to_include = ALL_ALGORITHMS[2:]
                             matching procedure iterative removal (R) and leaf-non-leaf selection via greedy algorithm (G)
                     MAT_RM: approximation via matching heuristic with
                             matching procedure iterative removal (R) and leaf-non-leaf selection via leaf distance matching (M)
+        linestyles: list of line styles (see matplotlib.pyplot.plot for futher details)
+        linewidths: list of line widths (list of floats).
     Outputs:
         histogram of the approximation ratios of 500 randomly generated TAP instances with n nodes and factor*E links 
         for each of the specified algorithm.
@@ -315,7 +317,11 @@ def plot_average_approx_ratios(ns, factor, axis, to_include = ALL_ALGORITHMS[2:]
             linestyle = linestyles[to_include.index('UPL')]
         else:
             linestyle = '-'
-        plt.plot(ns, avg_approx_ratios, label = 'uplinks', linestyle = linestyle)
+        if linewidths is not None:
+            linewidth = linewidths[to_include.index('UPL')]
+        else:
+            linewidth = 1.5
+        plt.plot(ns, avg_approx_ratios, label = 'uplinks', linestyle = linestyle, lw = linewidth)
     if 'NRD' in to_include:
         avg_approx_ratios = []
         for n in ns:
@@ -325,7 +331,11 @@ def plot_average_approx_ratios(ns, factor, axis, to_include = ALL_ALGORITHMS[2:]
             linestyle = linestyles[to_include.index('NRD')]
         else:
             linestyle = '-'
-        plt.plot(ns, avg_approx_ratios, label = 'naive rounding', linestyle = linestyle)
+        if linewidths is not None:
+            linewidth = linewidths[to_include.index('NRD')]
+        else:
+            linewidth = 1.5
+        plt.plot(ns, avg_approx_ratios, label = 'naive rounding', linestyle = linestyle, lw = linewidth)
     if 'IRD' in to_include:
         avg_approx_ratios = []
         for n in ns:
@@ -335,7 +345,11 @@ def plot_average_approx_ratios(ns, factor, axis, to_include = ALL_ALGORITHMS[2:]
             linestyle = linestyles[to_include.index('IRD')]
         else:
             linestyle = '-'
-        plt.plot(ns, avg_approx_ratios, label = 'iterative rounding', linestyle = linestyle)
+        if linewidths is not None:
+            linewidth = linewidths[to_include.index('IRD')]
+        else:
+            linewidth = 1.5
+        plt.plot(ns, avg_approx_ratios, label = 'iterative rounding', linestyle = linestyle, lw = linewidth)
     if 'MAT_B' in to_include:
         avg_approx_ratios = []
         for n in ns:
@@ -345,7 +359,11 @@ def plot_average_approx_ratios(ns, factor, axis, to_include = ALL_ALGORITHMS[2:]
             linestyle = linestyles[to_include.index('MAT_B')]
         else:
             linestyle = '-'
-        plt.plot(ns, avg_approx_ratios, label = 'matching B', linestyle = linestyle)
+        if linewidths is not None:
+            linewidth = linewidths[to_include.index('MAT_B')]
+        else:
+            linewidth = 1.5
+        plt.plot(ns, avg_approx_ratios, label = 'matching B', linestyle = linestyle, lw = linewidth)
     if 'MAT_WG' in to_include:
         avg_approx_ratios = []
         for n in ns:
@@ -357,7 +375,11 @@ def plot_average_approx_ratios(ns, factor, axis, to_include = ALL_ALGORITHMS[2:]
             linestyle = linestyles[to_include.index('MAT_WG')]
         else:
             linestyle = '-'
-        plt.plot(ns, avg_approx_ratios, label = 'matching WG', linestyle = linestyle)
+        if linewidths is not None:
+            linewidth = linewidths[to_include.index('MAT_WG')]
+        else:
+            linewidth = 1.5
+        plt.plot(ns, avg_approx_ratios, label = 'matching WG', linestyle = linestyle, lw = linewidth)
     if 'MAT_WM' in to_include:
         avg_approx_ratios = []
         for n in ns:
@@ -369,7 +391,11 @@ def plot_average_approx_ratios(ns, factor, axis, to_include = ALL_ALGORITHMS[2:]
             linestyle = linestyles[to_include.index('MAT_WM')]
         else:
             linestyle = '-'
-        plt.plot(ns, avg_approx_ratios, label = 'matching WM', linestyle = linestyle)
+        if linewidths is not None:
+            linewidth = linewidths[to_include.index('MAT_WM')]
+        else:
+            linewidth = 1.5
+        plt.plot(ns, avg_approx_ratios, label = 'matching WM', linestyle = linestyle, lw = linewidth)
     if 'MAT_RG' in to_include:
         avg_approx_ratios = []
         for n in ns:
@@ -381,7 +407,11 @@ def plot_average_approx_ratios(ns, factor, axis, to_include = ALL_ALGORITHMS[2:]
             linestyle = linestyles[to_include.index('MAT_RG')]
         else:
             linestyle = '-'
-        plt.plot(ns, avg_approx_ratios, label = 'matching RG', linestyle = linestyle)
+        if linewidths is not None:
+            linewidth = linewidths[to_include.index('MAT_RG')]
+        else:
+            linewidth = 1.5
+        plt.plot(ns, avg_approx_ratios, label = 'matching RG', linestyle = linestyle, lw = linewidth)
     if 'MAT_RM' in to_include:
         avg_approx_ratios = []
         for n in ns:
@@ -393,7 +423,11 @@ def plot_average_approx_ratios(ns, factor, axis, to_include = ALL_ALGORITHMS[2:]
             linestyle = linestyles[to_include.index('MAT_RM')]
         else:
             linestyle = '-'
-        plt.plot(ns, avg_approx_ratios, label = 'matching RM', linestyle = linestyle)
+        if linewidths is not None:
+            linewidth = linewidths[to_include.index('MAT_RM')]
+        else:
+            linewidth = 1.5
+        plt.plot(ns, avg_approx_ratios, label = 'matching RM', linestyle = linestyle, lw = linewidth)
     
     
     plt.legend()
@@ -406,7 +440,7 @@ def plot_average_approx_ratios(ns, factor, axis, to_include = ALL_ALGORITHMS[2:]
         
         
         
-def plot_max_approx_ratios(ns, factor, axis, to_include = ALL_ALGORITHMS[2:], linestyles = None):
+def plot_max_approx_ratios(ns, factor, axis, to_include = ALL_ALGORITHMS[2:], linestyles = None, linewidths = None):
     """
     Parameters:
         ns:         list of integers defining the number of nodes to consider
@@ -426,6 +460,8 @@ def plot_max_approx_ratios(ns, factor, axis, to_include = ALL_ALGORITHMS[2:], li
                             matching procedure iterative removal (R) and leaf-non-leaf selection via greedy algorithm (G)
                     MAT_RM: approximation via matching heuristic with
                             matching procedure iterative removal (R) and leaf-non-leaf selection via leaf distance matching (M)
+        linestyles: list of line styles (see matplotlib.pyplot.plot for futher details)
+        linewidths: list of line widths (list of floats).
     Outputs:
         histogram of the approximation ratios of 500 randomly generated TAP instances with n nodes and factor*E links 
         for each of the specified algorithm.
@@ -447,7 +483,11 @@ def plot_max_approx_ratios(ns, factor, axis, to_include = ALL_ALGORITHMS[2:], li
             linestyle = linestyles[to_include.index('UPL')]
         else:
             linestyle = '-'
-        plt.plot(ns, avg_approx_ratios, label = 'uplinks', linestyle = linestyle)
+        if linewidths is not None:
+            linewidth = linewidths[to_include.index('UPL')]
+        else:
+            linewidth = 1.5
+        plt.plot(ns, avg_approx_ratios, label = 'uplinks', linestyle = linestyle, lw = linewidth)
     if 'NRD' in to_include:
         avg_approx_ratios = []
         for n in ns:
@@ -457,7 +497,11 @@ def plot_max_approx_ratios(ns, factor, axis, to_include = ALL_ALGORITHMS[2:], li
             linestyle = linestyles[to_include.index('NRD')]
         else:
             linestyle = '-'
-        plt.plot(ns, avg_approx_ratios, label = 'naive rounding', linestyle = linestyle)
+        if linewidths is not None:
+            linewidth = linewidths[to_include.index('NRD')]
+        else:
+            linewidth = 1.5
+        plt.plot(ns, avg_approx_ratios, label = 'naive rounding', linestyle = linestyle, lw = linewidth)
     if 'IRD' in to_include:
         avg_approx_ratios = []
         for n in ns:
@@ -467,7 +511,11 @@ def plot_max_approx_ratios(ns, factor, axis, to_include = ALL_ALGORITHMS[2:], li
             linestyle = linestyles[to_include.index('IRD')]
         else:
             linestyle = '-'
-        plt.plot(ns, avg_approx_ratios, label = 'iterative rounding', linestyle = linestyle)
+        if linewidths is not None:
+            linewidth = linewidths[to_include.index('IRD')]
+        else:
+            linewidth = 1.5
+        plt.plot(ns, avg_approx_ratios, label = 'iterative rounding', linestyle = linestyle, lw = linewidth)
     if 'MAT_B' in to_include:
         avg_approx_ratios = []
         for n in ns:
@@ -477,7 +525,11 @@ def plot_max_approx_ratios(ns, factor, axis, to_include = ALL_ALGORITHMS[2:], li
             linestyle = linestyles[to_include.index('MAT_B')]
         else:
             linestyle = '-'
-        plt.plot(ns, avg_approx_ratios, label = 'matching B', linestyle = linestyle)
+        if linewidths is not None:
+            linewidth = linewidths[to_include.index('MAT_B')]
+        else:
+            linewidth = 1.5
+        plt.plot(ns, avg_approx_ratios, label = 'matching B', linestyle = linestyle, lw = linewidth)
     if 'MAT_WG' in to_include:
         avg_approx_ratios = []
         for n in ns:
@@ -489,7 +541,11 @@ def plot_max_approx_ratios(ns, factor, axis, to_include = ALL_ALGORITHMS[2:], li
             linestyle = linestyles[to_include.index('MAT_WG')]
         else:
             linestyle = '-'
-        plt.plot(ns, avg_approx_ratios, label = 'matching WG', linestyle = linestyle)
+        if linewidths is not None:
+            linewidth = linewidths[to_include.index('MAT_WG')]
+        else:
+            linewidth = 1.5
+        plt.plot(ns, avg_approx_ratios, label = 'matching WG', linestyle = linestyle, lw = linewidth)
     if 'MAT_WM' in to_include:
         avg_approx_ratios = []
         for n in ns:
@@ -501,7 +557,11 @@ def plot_max_approx_ratios(ns, factor, axis, to_include = ALL_ALGORITHMS[2:], li
             linestyle = linestyles[to_include.index('MAT_WM')]
         else:
             linestyle = '-'
-        plt.plot(ns, avg_approx_ratios, label = 'matching WM', linestyle = linestyle)
+        if linewidths is not None:
+            linewidth = linewidths[to_include.index('MAT_WM')]
+        else:
+            linewidth = 1.5
+        plt.plot(ns, avg_approx_ratios, label = 'matching WM', linestyle = linestyle, lw = linewidth)
     if 'MAT_RG' in to_include:
         avg_approx_ratios = []
         for n in ns:
@@ -513,7 +573,11 @@ def plot_max_approx_ratios(ns, factor, axis, to_include = ALL_ALGORITHMS[2:], li
             linestyle = linestyles[to_include.index('MAT_RG')]
         else:
             linestyle = '-'
-        plt.plot(ns, avg_approx_ratios, label = 'matching RG', linestyle = linestyle)
+        if linewidths is not None:
+            linewidth = linewidths[to_include.index('MAT_RG')]
+        else:
+            linewidth = 1.5
+        plt.plot(ns, avg_approx_ratios, label = 'matching RG', linestyle = linestyle, lw = linewidth)
     if 'MAT_RM' in to_include:
         avg_approx_ratios = []
         for n in ns:
@@ -525,7 +589,11 @@ def plot_max_approx_ratios(ns, factor, axis, to_include = ALL_ALGORITHMS[2:], li
             linestyle = linestyles[to_include.index('MAT_RM')]
         else:
             linestyle = '-'
-        plt.plot(ns, avg_approx_ratios, label = 'matching RM', linestyle = linestyle)
+        if linewidths is not None:
+            linewidth = linewidths[to_include.index('MAT_RM')]
+        else:
+            linewidth = 1.5
+        plt.plot(ns, avg_approx_ratios, label = 'matching RM', linestyle = linestyle, lw = linewidth)
     
     
     plt.legend()

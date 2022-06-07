@@ -201,6 +201,26 @@ def find_C_e(tree, edge, root):
         return component_2
     else:
         return component_1
+    
+    
+def find_connected_components(tree, edge):
+    """
+    Parameters
+        tree: tree under consideration
+        edge: edge of the tree
+        root: root of the tree
+    Returns
+        two lists of nodes corresponding to the disconnected components obtained by removing e from the tree.
+    """
+    # remove given edge from the tree
+    tree.remove_edge(edge[0], edge[1])
+    # retreive the two disconnected components obtained from removing edge
+    component_1, component_2 = list(nx.connected_components(tree))
+    # we have to add the edges back to the tree because we actually manipulate the original tree here
+    # (we are not working with a copy of the defined tree for computational cost reasons).
+    tree.add_edge(edge[0], edge[1])
+    return component_1, component_2
+    
 
 
 def get_instance(n, factor, seed):

@@ -1,44 +1,70 @@
 # Attribute file for model naturalLP
 GRB_ATTR_FILE_VERSION 090501
 SECTION FINGERPRINT
-0x73d30486
+0x15a463d2
 SECTION SOLUTION
 # Solution for model naturalLP
-# Objective value = 2.3333333333333335e+00
+# Objective value = 1.5
 link_vars[0] 0
 link_vars[1] 0
-link_vars[2] 3.3333333333333331e-01
+link_vars[2] 0
 link_vars[3] 0
 link_vars[4] 0
 link_vars[5] 0
-link_vars[6] 0
-link_vars[7] 3.3333333333333331e-01
+link_vars[6] 0.5
+link_vars[7] 0
 link_vars[8] 0
-link_vars[9] 6.6666666666666674e-01
-link_vars[10] 0
+link_vars[9] 0
+link_vars[10] 0.5
 link_vars[11] 0
 link_vars[12] 0
-link_vars[13] 6.6666666666666674e-01
-link_vars[14] 3.3333333333333331e-01
+link_vars[13] 0
+link_vars[14] 0
 link_vars[15] 0
 link_vars[16] 0
 link_vars[17] 0
+link_vars[18] 0.5
+link_vars[19] 0
+link_vars[20] 0
+link_vars[21] 0
+link_vars[22] 0
+link_vars[23] 0
+link_vars[24] 0
+link_vars[25] 0
+link_vars[26] 0
+link_vars[27] 0
+link_vars[28] 0
+link_vars[29] 0
+link_vars[30] 0
+link_vars[31] 0
+link_vars[32] 0
+link_vars[33] 0
+link_vars[34] 0
+link_vars[35] 0
+link_vars[36] 0
+link_vars[37] 0
+link_vars[38] 0
+link_vars[39] 0
+link_vars[40] 0
+link_vars[41] 0
+link_vars[42] 0
+link_vars[43] 0
+link_vars[44] 0
 SECTION PI
-c[0] 0
-c[1] 0
-c[2] 0
-c[3] 3.3333333333333331e-01
-c[4] 3.3333333333333331e-01
+c[0] 0.5
+c[1] 0.5
+c[2] 0.5
+c[3] 0
+c[4] 0
 c[5] 0
-c[6] 3.3333333333333326e-01
-c[7] 6.6666666666666674e-01
-c[8] 6.6666666666666674e-01
+c[6] 0
+c[7] 0
+c[8] 0
 SECTION BASIS
-NAME naturalLP 18 Variables 9 Constraints
- XL link_vars[2]  c[2]    
- XL link_vars[7]  c[3]    
- XL link_vars[9]  c[4]    
- XL link_vars[13]  c[6]    
- XL link_vars[14]  c[7]    
- XL link_vars[15]  c[8]    
+NAME naturalLP 45 Variables 9 Constraints
+ XL link_vars[6]  c[0]    
+ XL link_vars[9]  c[1]    
+ XL link_vars[10]  c[2]    
+ XL link_vars[18]  c[3]    
+ XL link_vars[29]  c[4]    
 ENDATA
