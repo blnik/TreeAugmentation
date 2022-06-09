@@ -436,7 +436,7 @@ def plot_average_approx_ratios(ns, factor, axis, to_include = ALL_ALGORITHMS[2:]
     if factor == 'allLinks':
         plt.title(f'all links', loc = 'left')
     else:
-        plt.title(f'|L| = ${factor}|E(T)|$', loc = 'left')
+        plt.title(f'|L| = ${factor}|E|$', loc = 'left')
         
         
         
@@ -602,4 +602,4 @@ def plot_max_approx_ratios(ns, factor, axis, to_include = ALL_ALGORITHMS[2:], li
     if factor == 'allLinks':
         plt.title(f'all links', loc = 'left')
     else:
-        plt.title(f'|L| = ${factor}|E(T)|$', loc = 'left')
+        plt.title(f'|L| = ${factor}|E|$', loc = 'left')
